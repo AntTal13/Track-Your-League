@@ -6,6 +6,11 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 //GET /games
 router.get('/games', ensureLoggedIn, gamesCtrl.index);
-
+// POST /games (create functionality)
+router.post('/games', ensureLoggedIn, gamesCtrl.create);
+// POST /movies/:id/players
+router.post('/games', ensureLoggedIn, gamesCtrl.addToGames);
+// DELETE /players/:id
+router.delete('/games/:id', ensureLoggedIn, gamesCtrl.delete);
 
 module.exports = router;

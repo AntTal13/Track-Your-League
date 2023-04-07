@@ -7,7 +7,7 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 router.get('/players/new', ensureLoggedIn, playersCtrl.new);
 // POST /performers (create functionality)
 router.post('/players', ensureLoggedIn, playersCtrl.create);
-// POST /movies/:id/players (associate a performer with a movie)
+// POST /movies/:id/players 
 router.post('/teams/:id/players', ensureLoggedIn, playersCtrl.addToRoster);
 // DELETE /players/:id
 router.delete('/players/:id', ensureLoggedIn, playersCtrl.delete);
