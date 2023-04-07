@@ -1,0 +1,51 @@
+<%- include('../partials/header') %>
+
+<br><br><h2>Add Game Below</h2>
+<% if (user) { %>
+<form id="add-game-form" method="POST"
+  action="/games">
+  <label>Game:</label>
+  <textarea name="name"></textarea>
+  <label>Win/Loss:</label>
+  <select name="winLoss">
+    <option value="Win">Win</option>
+    <option value="Loss">Loss</option>
+  </select>
+  <input type="submit" value="Add Game">
+</form>
+<% } %>
+
+<% if (games.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Game</th>
+        <th>Win/Loss</th>
+        <th>Box Scores</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% games.forEach(function(g) { %>
+        <tr>
+          <td><%= g.name %></td>
+          <td><%= g.winLoss %></td>
+          <td>
+            <% if (user?._id.equals(g.user)) { %>
+              <form action="/games/<%= g._id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+              </form>
+            <% } %>
+          </td>
+        </tr>
+      <% }); %>
+      <tr>
+        <td colspan="3"></td>
+      </tr>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Games Yet</h5>
+<% } %>
+  
+<%- include('../partials/footer') %>
