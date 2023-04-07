@@ -5,7 +5,6 @@ const teamSchema = new Schema({
     name: String,
     winLoss: {
       type: String,
-      required: true
     },
     opponent: String,
     players: [{
