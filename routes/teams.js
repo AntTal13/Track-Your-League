@@ -5,6 +5,6 @@ const teamsCtrl = require('../controllers/teams');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 //GET /teams
-router.get('/', teamsCtrl.index);
+router.get('/', ensureLoggedIn, teamsCtrl.index);
 
 module.exports = router;

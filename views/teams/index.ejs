@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 
+<% if (teams.length) { %>
 <table id="list">
   <thead>
     <tr>
@@ -16,5 +17,13 @@
       <% }); %>
     </tbody>
   </table>
-  
+<% } else { %>
+    <h5>No Teams Yet</h5>
+<% } %>
+
+<% if (user) { %>
+    <button onclick="window.location.href = '/teams/new';">Add Team</button>
+<% } %>
+
+
 <%- include('../partials/footer') %>

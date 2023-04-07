@@ -81,3 +81,16 @@ footer {
   height: 125px;
   width: 100%;
 }
+
+button {
+  font-size: 25px;
+  border-radius: 5%;
+  background-image: linear-gradient(black, darkorange);
+  color: white;
+  border: solid black;
+}
+
+button:hover {
+  background-image: linear-gradient(darkorange, white);
+  color: black;
+}
