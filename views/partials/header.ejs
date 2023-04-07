@@ -13,7 +13,7 @@
     <% if (user) { %>
         <a href="/teams"	<%- title === 'My Team' ? 'class="active"' : '' %>>My Team</a>
         <a href="/games"	<%- title === 'Games' ? 'class="active"' : '' %>>Games</a>
-        <a href="/" <%- title === 'Team Standings' ? 'class="active"' : '' %>>Team Standings</a>
+        <a href="/teamstandings" <%- title === 'Team Standings' ? 'class="active"' : '' %>>Team Standings</a>
         <a href="/players/new" <%- title === 'Add New Player' ? 'class="active"' : '' %>>Add New Player</a>
         <a href="/logout">LOG OUT</a>
     <% } else { %>
