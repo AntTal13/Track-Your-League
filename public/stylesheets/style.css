@@ -1,10 +1,63 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
 }
 
-a {
-  color: #00B7FF;
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: 
+    "nav"
+    "main"
+}
+
+body > nav {
+  grid-area: nav;
+  background-color: black;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+}
+
+nav > img {
+  width: 34px;
+  object-fit: contain;
+  margin-right: auto;
+}
+
+body > main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #E8ECEB;
+  padding: 20px;
+}
+
+body > main h1:first-child {
+  margin-bottom: 50px;
+}
+
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: orange;
+}
+
+nav > a:hover:not(.active) {
+  color: black;
+  background-image: linear-gradient(orange, yellow);
+}
+
+nav > a.active {
+  color: white;
+  cursor: default;
 }
 
 .login {
@@ -16,4 +69,15 @@ a {
 
 .login img {
   height: 30px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/05/Basketball-Ball-Wallpapers-HD-Free-Download.jpg");
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  height: 125px;
+  width: 100%;
 }
