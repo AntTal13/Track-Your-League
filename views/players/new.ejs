@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<div>Before adding, please ensure that the Player is not in the following list:</div>
+<br>
+<form id="add-player-form" action="/players" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name">
+  <input type="submit" value="Add Player">
+</form>
+<br>
+
+<section id="badge-container">
+  <% players.forEach(function(p) { %>
+    <article class="badge"><%= p.name %></article>
+  <% }) %>
+</section>
+
+
+<%- include('../partials/footer') %>
