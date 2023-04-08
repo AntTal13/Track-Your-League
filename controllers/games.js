@@ -14,18 +14,17 @@ async function index(req, res) {
 }
 
 async function deleteGame(req, res) {
-    // const team = await Team.findOne({ 'players._id': req.params.id, 'players.user': req.user._id });
-    // if (!team) return res.redirect('/teams');
-    // team.players.remove(req.params.id);
-    // await team.save();
-    // res.redirect(`/teams/${team._id}`);
+    const game = await Game.findOne({ 'games._id': req.params.id, 'games.user': req.user._id });
+    if (!game) return res.redirect('/games');
+    game.remove(req.params.id);
+    await game.save();
+    res.redirect(`/games`);
 }
 
 async function addToGames(req, res) {
-    const team = await Team.findById(req.params.id);
-    // The cast array holds the performer's ObjectId (referencing)
-    team.games.push(req.body.gameId);
-    await team.save();
+    const game = await Game.findById(req.params.id);
+    game.push(req.body);
+    await game.save();
     res.redirect(`/games`);
 }
 
@@ -33,6 +32,11 @@ async function create(req, res) {
   req.body.born += 'T00:00';
   try {
     await Game.create(req.body);
+
+    req.body.user = req.user._id;
+    req.body.userName = req.user.name;
+    req.body.userAvatar = req.user.avatar;
+
   } catch (err) {
     console.log(err);
   }

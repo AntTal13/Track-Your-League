@@ -30,6 +30,7 @@
         <tr>
           <td><%= g.name %></td>
           <td><%= g.winLoss %></td>
+            <td><a href="/games/<%= g._id %>">Stats</a></td>
           <td>
             <% if (user?._id.equals(g.user)) { %>
               <form action="/games/<%= g._id %>?_method=DELETE" method="POST">
@@ -40,7 +41,7 @@
         </tr>
       <% }); %>
       <tr>
-        <td colspan="4"></td>
+        <td colspan="3"></td>
       </tr>
     </tbody>
   </table>
