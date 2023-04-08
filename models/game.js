@@ -12,6 +12,10 @@ const gameSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Stat'
      }],
+     user: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+     }],
 }, {
     timestamps: true
 });
