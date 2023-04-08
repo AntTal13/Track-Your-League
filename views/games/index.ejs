@@ -32,11 +32,9 @@
           <td><%= g.winLoss %></td>
             <td><a href="/games/<%= g._id %>">Stats</a></td>
           <td>
-            <% if (user?._id.equals(g.user)) { %>
               <form action="/games/<%= g._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
               </form>
-            <% } %>
           </td>
         </tr>
       <% }); %>
