@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const statSchema = new Schema({
-    stats: Number,
     player: [{
         type: Schema.Types.ObjectId,
         ref: 'Player'
@@ -11,6 +10,9 @@ const statSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Game'
      }],
+     points: Number,
+     assists: Number,
+     rebounds: Number,
 }, {
     timestamps: true
 });
