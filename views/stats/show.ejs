@@ -1,5 +1,37 @@
 <%- include('../partials/header') %>
 
-<h2>Game Box Score</h2>
+
+<h2>
+    <section id="show-page">
+        <div><%= team.name %></div>
+    </section>
+</h2>
+
+<h2>Box Score</h2>
+
+<br>
+<% if (team) { %>
+    <table>
+        <thead>
+        <tr>
+            <th>Player</th>
+            <th>Points</th>
+            <th>Assists</th>
+            <th>Rebounds</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+            <%- team.players.map(p => 
+                `<ul>${p.name}</ul>`
+                ).join('') %>
+            </td>
+        </tr>
+        </tbody>
+        <td colspan="4"></td>
+    </section>
+<% }%>
 
 <%- include('../partials/footer') %>
