@@ -6,7 +6,7 @@
 
 <br><br>
 <h2>Players</h2>
-<% if (team.players.length) { %>
+<% if (team) { %>
     <table>
       <thead>
         <tr>
@@ -24,9 +24,6 @@
                 `<ul>${p.name}</ul>`
                 ).join('') %>
             </td>
-            <td><%=  %></td>
-            <td><%=  %></td>
-            <td><%=  %></td>
         </tr>
       </tbody>
       <td colspan="4"></td>
@@ -38,10 +35,10 @@
         ).join('') %>
         </select>
         <button type="submit">Add to Roster</button>
-    </form>
+        </form>
 <% } else { %>
     <h5>No Players Yet</h5>
-  <% } %>
+<% } %>
   
 <!-- <% team.players.forEach(function(r) { %>
     <% if (user?._id.equals(r.user)) { %>
