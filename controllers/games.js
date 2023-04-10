@@ -28,7 +28,6 @@ async function deleteGame(req, res) {
     // if (!game) return res.redirect('/games');
     // game.remove(req.params.id);
     const game = await Game.findById(req.params.id)
-    console.log(game)
     await Game.deleteOne(game)
     //
     const team = await Team.findOne({ 'games': game });
@@ -57,6 +56,7 @@ async function create(req, res) {
     
     team.games.push(game._id);
     await team.save();
+    console.log(game)
 
   } catch (err) {
     console.log(err);

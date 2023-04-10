@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 
+<h2>Select Team To View Games</h2>
 <form id="add-game-form" method="POST" action="/games/some">
     <select name="teamId">
         <option value="no team">Select a Team</option>
@@ -10,7 +11,8 @@
     <button>SELECT</button>
 </form>   
 
-<h2>Select Team</h2>
+<br><br>
+<h2>Select Team to Add Games</h3>
 <form id="add-game-form" method="POST" action="/games">
     <select name="teamId">
         <option value="no team">Select a Team</option>
@@ -19,7 +21,6 @@
         ).join('') %>
     </select>
 
-<br><br><h2>Add Game Below</h2>
 <% if (user) { %>
   <label>Game:</label>
   <textarea name="name"></textarea>
