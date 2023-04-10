@@ -5,7 +5,7 @@ const statsCtrl = require('../controllers/stats');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 //GET /stats
-router.get('/stats', ensureLoggedIn, statsCtrl.index);
+router.get('/stats/:id', ensureLoggedIn, statsCtrl.show);
 
 
 module.exports = router;
