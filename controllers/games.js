@@ -18,7 +18,7 @@ async function getSome(req, res) {
 }
 
 async function index(req, res) {
-  const games = await Game.find({}).populate('user');
+  const games = await Game.find({}).populate('user').sort('name');
   const team = await Team.find({});
   res.render('games/index', { title: 'My Games', games, team });
 }
