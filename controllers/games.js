@@ -5,9 +5,17 @@ const User = require('../models/user');
 module.exports = {
   index,
   create,
-  //addToGames,
-  delete: deleteGame
+  delete: deleteGame,
+  getSome
 };
+
+async function getSome(req, res) {
+    console.log('Note', req.body)
+    const teams = await Team.find({});
+    const team = await Team.find({_id: req.body.teamId});
+    console.log('Something', team[0].games);
+    res.render('games/index', { title: 'My Games', team: teams, games: team[0].games });
+}
 
 async function index(req, res) {
   const games = await Game.find({}).populate('user');

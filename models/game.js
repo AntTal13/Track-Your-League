@@ -5,7 +5,6 @@ const gameSchema = new Schema({
     name: String,
     winLoss: {
       type: String,
-      required: true
     },
     opponent: String,
     boxScore: [{
