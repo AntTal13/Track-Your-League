@@ -5,7 +5,7 @@ const User = require('../models/user');
 module.exports = {
   index,
   create,
-  addToGames,
+  //addToGames,
   delete: deleteGame
 };
 
@@ -29,17 +29,11 @@ async function deleteGame(req, res) {
 // <% if (user?._id.equals(g.user)) { %>
 // <% } %>
 
-async function addToGames(req, res) {
-    const game = await Game.findById(req.params.id);
-    game.push(req.body);
-    await game.save();
-    res.redirect(`/games`);
-}
-
 async function create(req, res) {
   req.body.born += 'T00:00';
   try {
     const game = await Game.create(req.body);
+    const team = await Team.findById(req.body.teamId);
 
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
@@ -47,9 +41,10 @@ async function create(req, res) {
 
     game.user.push(req.body.user);
     await game.save()
-    console.log(game)
-    console.log(game.user)
-    console.log(game._id)
+    
+    team.games.push(game._id);
+    await team.save();
+
   } catch (err) {
     console.log(err);
   }
