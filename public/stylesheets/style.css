@@ -56,7 +56,8 @@ nav > a:hover:not(.active) {
 }
 
 nav > a.active {
-  color: white;
+  color: black;
+  background-image: linear-gradient(grey, orange);
   cursor: default;
 }
 

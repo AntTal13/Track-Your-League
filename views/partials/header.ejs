@@ -11,10 +11,10 @@
   <nav>
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThkPFarxo4MUDykv7fqEWK9ka3a-O-xDtLoA&usqp=CAU">
     <% if (user) { %>
-        <a href="/teams"	<%- title === 'My Team' ? 'class="active"' : '' %>>My Team</a>
-        <a href="/games"	<%- title === 'Games' ? 'class="active"' : '' %>>Games</a>
+        <a href="/teams"	<%- title === 'My Teams' ? 'class="active"' : '' %>>My Team</a>
+        <a href="/games"	<%- title === 'My Games' ? 'class="active"' : '' %>>Games</a>
         <a href="/teamstandings" <%- title === 'Team Standings' ? 'class="active"' : '' %>>Team Standings</a>
-        <a href="/players/new" <%- title === 'Add New Player' ? 'class="active"' : '' %>>Add New Player</a>
+        <a href="/players/new" <%- title === 'Add Player' ? 'class="active"' : '' %>>Add New Player</a>
         <a href="/logout">LOG OUT</a>
     <% } else { %>
             <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>

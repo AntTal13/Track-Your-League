@@ -1,5 +1,15 @@
 <%- include('../partials/header') %>
 
+<h2>Select Team</h2>
+<form id="add-game-to-team" action="/games" method="GET">
+    <select name="My Teams">
+        <option value="no team">Select a Team</option>
+        <%- team.map(t => 
+        `<option value="${t._id}">${t.name}</option>`
+        ).join('') %>
+    </select>
+</form>
+
 <br><br><h2>Add Game Below</h2>
 <% if (user) { %>
 <form id="add-game-form" method="POST"

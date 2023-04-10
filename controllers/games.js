@@ -11,7 +11,8 @@ module.exports = {
 
 async function index(req, res) {
   const games = await Game.find({}).populate('user');
-  res.render('games/index', { title: 'My Games', games });
+  const team = await Team.find({});
+  res.render('games/index', { title: 'My Games', games, team });
 }
 
 async function deleteGame(req, res) {
