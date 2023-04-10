@@ -95,3 +95,9 @@ button:hover {
   background-image: linear-gradient(darkorange, white);
   color: black;
 }
+
+#badge-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}

@@ -12,6 +12,7 @@
 <section id="badge-container">
   <% players.forEach(function(p) { %>
     <article class="badge"><%= p.name %></article>
+    <a href="/players/<%= p.id %>/edit">Edit</a>
   <% }) %>
 </section>
 

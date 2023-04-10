@@ -5,8 +5,21 @@ module.exports = {
   new: newPlayer,
   create,
   addToRoster,
-  delete: deletePlayer
+  delete: deletePlayer,
+  edit,
+  update
 };
+
+async function update(req, res) {
+    const player = await Player.findById(req.params.id);
+    await Player.updateOne(player, req.body);
+    res.redirect(`/players/new`);
+}
+
+async function edit(req, res) {
+    const player = await Player.findById(req.params.id);
+    res.render('players/edit', { title: 'Edit Player', player });
+}
 
 async function deletePlayer(req, res) {
     const team = await Team.findOne({ 'players._id': req.params.id, 'players.user': req.user._id });
