@@ -12,7 +12,7 @@
     <% teams.forEach(function(t) { %>
       <tr>
         <td><%= t.name %></td>
-        <td><a href="/teams/<%= t._id %>">DETAILS</a></td>
+        <td><a href="/teams/<%= t._id %>">Details</a></td>
       </tr>
       <% }); %>
     </tbody>
@@ -20,7 +20,7 @@
 <% } else { %>
     <h5>No Teams Yet</h5>
 <% } %>
-
+<br>
 <% if (user) { %>
     <button onclick="window.location.href = '/teams/new';">Add Team</button>
 <% } %>

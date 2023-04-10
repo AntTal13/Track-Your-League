@@ -1,10 +1,12 @@
 <%- include('../partials/header') %>
 
+<h2>
 <section id="show-page">
     <div><%= team.name %></div>
 </section>
+</h2>
 
-<br><br>
+<br>
 <h2>Players</h2>
 <% if (team) { %>
     <table>
@@ -34,7 +36,9 @@
         `<option value="${p._id}">${p.name}</option>`
         ).join('') %>
         </select>
+        <br>
         <button type="submit">Add to Roster</button>
+        <br>
         </form>
 <% } else { %>
     <h5>No Players Yet</h5>

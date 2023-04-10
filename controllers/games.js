@@ -12,7 +12,7 @@ module.exports = {
 async function getSome(req, res) {
     //console.log('Note', req.body)
     const teams = await Team.find({});
-    const team = await Team.find({_id: req.body.teamId});
+    const team = await Team.find({_id: req.body.teamId}).populate('games');
     //console.log('Something', team[0].games);
     res.render('games/index', { title: 'My Games', team: teams, games: team[0].games });
 }
