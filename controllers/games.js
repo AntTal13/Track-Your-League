@@ -1,6 +1,8 @@
 const Team = require('../models/team');
 const Game = require('../models/game');
 const User = require('../models/user');
+const Player = require('../models/player');
+
 
 module.exports = {
   index,
@@ -56,7 +58,6 @@ async function create(req, res) {
     
     team.games.push(game._id);
     await team.save();
-    console.log(game)
 
   } catch (err) {
     console.log(err);
