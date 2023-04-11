@@ -12,26 +12,25 @@ module.exports = {
 async function create(req, res) {
     const game = await Game.findById(req.params.id).populate('boxScore');;
     const team = await Team.findOne({ 'games': game }).populate('players');
-    const players = await Player.find({ _id: { $nin: team.players } }).populate('stats').sort('name');
+    const player = await Player.findById(req.body.playerId).populate('stats').sort('name');
     
     // New below
     const newStat = {
-        players: players._id,
-        game: game._id,
+        player: req.body.playerId,
+        game: req.params.id,
         points: req.body.points,
         assists: req.body.assists,
         rebounds: req.body.rebounds,
     }
 
-    players.stats.push(newStat._id)
-    game.boxScore.push(newStat._id)
-    await players.save()
+    const stat = await Stat.create(newStat)
+    player.stats.push(stat._id)
+    await player.save()
+    game.boxScore.push(stat._id)
     await game.save()
 
-    console.log(newStat, 'Hello')
-    
     // New above
-    res.render('stats/show', { title: 'Game Stats', game, team, players }); 
+    res.render('stats/show', { title: 'Game Stats', game, team, player }); 
 }
 
 async function show(req, res) {
