@@ -1,15 +1,16 @@
 <%- include('../partials/header') %>
+<script src="/javascripts/general.js" type="text/javascript"></script>
 
 <h2>Select Team To View Games</h2>
 <form id="add-game-form" method="POST" action="/games/some">
-    <select name="teamId">
+    <select name="teamId" onchange="checkSelect()">
         <option value="no team">Select a Team</option>
-        <%- team.map(t => 
-        `<option value="${t._id}">${t.name}</option>`
-        ).join('') %>
+        <% team.forEach(function(t) { %>
+          <option value="<%= t._id %>"><%= t.name %></option>
+        <% }); %>
     </select>
-    <button>SELECT</button>
-</form>   
+    <button id="select-button" style="display: none;">SELECT</button>
+</form>
 
 <br><br>
 <h2>Select Team to Add Games</h3>
