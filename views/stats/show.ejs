@@ -22,16 +22,30 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>
-            <%- team.players.map(p => 
-                `<ul>${p.name}</ul>`
-                ).join('') %>
-            </td>
-        </tr>
         </tbody>
         <td colspan="4"></td>
     </section>
-<% }%>
+    <form id="add-stats-to-player" action="/stats/<%= team._id %>" method="POST">
+        <label>Player:</label>
+        <select name="playerId">
+        <%- team.players.map(p => 
+            `<option value="${p._id}">${p.name}</option>`
+        ).join('') %>
+        </select>
+        <label>Points:</label>
+        <input type="number" name="points">
+        <label>Assists:</label>
+        <input type="number" name="assists">
+        <label>Rebounds:</label>
+        <input type="number" name="rebounds">
+        <br>
+        <button type="submit">Add to Box Score</button>
+        <br>
+        </form>
+ <% } else { %>
+        <h5>No Stats Yet</h5>
+<% } %>
+          
 
 <%- include('../partials/footer') %>
+

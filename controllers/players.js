@@ -31,7 +31,6 @@ async function deletePlayer(req, res) {
 
 async function addToRoster(req, res) {
     const team = await Team.findById(req.params.id);
-    // The cast array holds the performer's ObjectId (referencing)
     team.players.push(req.body.playerId);
     await team.save();
     res.redirect(`/teams/${team._id}`);
