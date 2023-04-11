@@ -21,11 +21,10 @@
             <th></th>
         </tr>
         </thead>
-        <tbody>
-        </tbody>
+    </tbody>
         <td colspan="4"></td>
     </section>
-    <form id="add-stats-to-player" action="/stats/<%= team._id %>" method="POST">
+    <form id="add-stats-to-player" action="/stats/<%= game._id %>" method="POST">
         <label>Player:</label>
         <select name="playerId">
         <%- team.players.map(p => 
@@ -33,17 +32,15 @@
         ).join('') %>
         </select>
         <label>Points:</label>
-        <input type="number" name="points">
+        <input type="text" name="points" placeholder="points">
         <label>Assists:</label>
-        <input type="number" name="assists">
+        <input type="text" name="assists" placeholder="assists">
         <label>Rebounds:</label>
-        <input type="number" name="rebounds">
+        <input type="text" name="rebounds" placeholder="rebounds">
         <br>
         <button type="submit">Add to Box Score</button>
         <br>
         </form>
- <% } else { %>
-        <h5>No Stats Yet</h5>
 <% } %>
           
 

@@ -12,5 +12,7 @@ router.get('/new', ensureLoggedIn, teamsCtrl.new);
 router.get('/:id', teamsCtrl.show);
 // POST /teams
 router.post('/', ensureLoggedIn, teamsCtrl.create);
+// DELETE /teams/:id
+router.delete('/:id', ensureLoggedIn, teamsCtrl.delete);
 
 module.exports = router;

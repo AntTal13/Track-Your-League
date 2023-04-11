@@ -5,8 +5,15 @@ module.exports = {
   index,
   new: newTeam,
   create,
-  show
+  show,
+  delete: deleteTeam,
 };
+
+async function deleteTeam(req, res) {
+    const team = await Team.findById(req.params.id)
+    await Team.deleteOne(team)
+    res.redirect('/teams');
+}
 
 async function index(req, res) {
   const teams = await Team.find({});

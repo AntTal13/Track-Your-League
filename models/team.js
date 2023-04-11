@@ -15,6 +15,10 @@ const teamSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Game'
     }],
+    user: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }],
 }, {
     timestamps: true
 });

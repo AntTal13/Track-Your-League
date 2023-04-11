@@ -40,9 +40,12 @@
         <button type="submit">Add to Roster</button>
         <br>
         </form>
-<% } else { %>
-    <h5>No Players Yet</h5>
 <% } %>
+
+    <form action="/teams/<%= team._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete Team</button>
+    </form>
+
   
 <!-- <% team.players.forEach(function(r) { %>
     <% if (user?._id.equals(r.user)) { %>
