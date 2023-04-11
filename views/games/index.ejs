@@ -3,7 +3,6 @@
 <h2>Select Team To View Games</h2>
 <form id="add-game-form" method="POST" action="/games/some">
     <select name="teamId">
-        <option value="no team">Select a Team</option>
         <%- team.map(t => 
         `<option value="${t._id}">${t.name}</option>`
         ).join('') %>
