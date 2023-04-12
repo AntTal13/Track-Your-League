@@ -12,10 +12,8 @@ module.exports = {
 };
 
 async function getSome(req, res) {
-    //console.log('Note', req.body)
     const teams = await Team.find({});
     const team = await Team.find({_id: req.body.teamId}).populate('games');
-    //console.log('Something', team[0].games);
     res.render('games/index', { title: 'My Games', team: teams, games: team[0].games });
 }
 
@@ -26,16 +24,13 @@ async function index(req, res) {
 }
 
 async function deleteGame(req, res) {
-    // const game = await Game.findOne({ 'games._id': req.params.id, 'games.user': req.user._id });
-    // if (!game) return res.redirect('/games');
-    // game.remove(req.params.id);
     const game = await Game.findById(req.params.id)
     await Game.deleteOne(game)
-    //
+    
     const team = await Team.findOne({ 'games': game });
     team.games.remove(game);
     await team.save();
-    // await game.save();
+    
     res.redirect(`/games`);
 }
 

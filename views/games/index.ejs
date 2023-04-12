@@ -14,14 +14,13 @@
 <h2>Select Team to Add Games</h3>
 <form id="add-game-form" method="POST" action="/games">
     <select name="teamId">
-        <option value="no team">Select a Team</option>
         <%- team.map(t => 
         `<option value="${t._id}">${t.name}</option>`
         ).join('') %>
     </select>
 
   <label>Game:</label>
-  <textarea name="name"></textarea>
+  <input name="name"></input>
   <label>Win/Loss:</label>
   <select name="winLoss">
     <option value="Win">Win</option>
@@ -30,7 +29,7 @@
   <input type="submit" value="Add Game">
 </form>
 
-
+<br><br>
 <% if (games.length) { %>
   <table>
     <thead>

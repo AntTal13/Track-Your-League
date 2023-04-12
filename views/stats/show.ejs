@@ -37,6 +37,8 @@
     </section>
     <table>
     <form id="add-stats-to-player" action="/stats/<%= game._id %>" method="POST">
+        <br><br>
+        <section id="stats-player">
         <label>Player:</label>
         <select name="playerId">
         <%- team.players.map(p => 
@@ -49,6 +51,7 @@
         <input type="text" name="assists" placeholder="assists">
         <label>Rebounds:</label>
         <input type="text" name="rebounds" placeholder="rebounds">
+        </section>
         <br>
         <button type="submit">Add to Box Score</button>
         <br>

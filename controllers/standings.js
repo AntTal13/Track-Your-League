@@ -13,6 +13,5 @@ async function index(req, res) {
             }, {});
             t.tally = tally
         })
-    console.log(teams)
     res.render('teamstandings/index', { title: 'Team Standings', teams: teams });
 }
