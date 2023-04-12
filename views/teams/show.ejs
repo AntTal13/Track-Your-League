@@ -6,10 +6,11 @@
 </section>
 </h2>
 
+<% if (user?._id.equals(team.user)) { %>
 <form action="/teams/<%= team._id %>?_method=DELETE" method="POST">
     <button type="submit">Delete Team</button>
   </form>
-
+<% } %>
 
 <br>
 <h2>Players</h2>
