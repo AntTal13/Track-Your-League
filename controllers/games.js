@@ -40,17 +40,13 @@ async function deleteGame(req, res) {
 }
 
 async function create(req, res) {
-  req.body.born += 'T00:00';
   try {
-    const game = await Game.create(req.body);
-    const team = await Team.findById(req.body.teamId);
-
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
-
-    game.user.push(req.body.user);
-    await game.save()
+    
+    const game = await Game.create(req.body);
+    const team = await Team.findById(req.body.teamId);
     
     team.games.push(game._id);
     await team.save();

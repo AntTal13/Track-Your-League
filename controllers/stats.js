@@ -34,8 +34,10 @@ async function create(req, res) {
 }
 
 async function show(req, res) {
-    const game = await Game.findById(req.params.id);
+    const game = await Game.findById(req.params.id)
     const team = await Team.findOne({ 'games': game }).populate('players');
+    const stat = await Stat.findOne({ 'game': game }).populate('player');
+    //console.log(stat.player.name);
     const players = await Player.find({ _id: { $nin: team.players } }).populate('stats').sort('name');
-    res.render('stats/show', { title: 'Game Stats', game, team, players });
+    res.render('stats/show', { title: 'Game Stats', game, team, stat, players });
 }

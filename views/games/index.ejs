@@ -20,7 +20,6 @@
         ).join('') %>
     </select>
 
-<% if (user) { %>
   <label>Game:</label>
   <textarea name="name"></textarea>
   <label>Win/Loss:</label>
@@ -30,7 +29,7 @@
   </select>
   <input type="submit" value="Add Game">
 </form>
-<% } %>
+
 
 <% if (games.length) { %>
   <table>

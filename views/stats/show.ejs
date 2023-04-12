@@ -18,18 +18,19 @@
             <th>Points</th>
             <th>Assists</th>
             <th>Rebounds</th>
-            <th></th>
         </tr>
         </thead>
-    <% if (players.length > 0) { %>
-        <% player.stats.forEach(function(s) { %>   
-    <tbody>
-        <td></td>
-        <td>s.points</td>
-        <td>s.assists</td>
-        <td>s.rebounds</td>
-    </tbody>
-        <td colspan="4"></td>
+        <% console.log(stat.player.name) %>
+    <% if (game.boxScore.length > 0) { %>
+        <% game.boxScore.forEach(function(s) { %>   
+        <tbody>
+        <tr>
+            <td><%= s.player %></td>
+            <td><%= s.points %></td>
+            <td><%= s.assists %></td>
+            <td><%= s.rebounds %></td>
+        </tr>
+        </tbody>
     </table>
         <% }) %>
     <% } %>
