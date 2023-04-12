@@ -11,6 +11,7 @@
 
 <br>
 <% if (team) { %>
+    <section id="stats-table">
     <table>
         <thead>
         <tr>
@@ -20,20 +21,20 @@
             <th>Rebounds</th>
         </tr>
         </thead>
-        <% console.log(stat.player.name) %>
     <% if (game.boxScore.length > 0) { %>
-        <% game.boxScore.forEach(function(s) { %>   
         <tbody>
+            <% stats.forEach(function(s) { %>   
         <tr>
-            <td><%= s.player %></td>
+            <td><%= s.player.name %></td>
             <td><%= s.points %></td>
             <td><%= s.assists %></td>
             <td><%= s.rebounds %></td>
         </tr>
-        </tbody>
-    </table>
         <% }) %>
     <% } %>
+    </tbody>
+    </table>
+    </section>
     <table>
     <form id="add-stats-to-player" action="/stats/<%= game._id %>" method="POST">
         <label>Player:</label>

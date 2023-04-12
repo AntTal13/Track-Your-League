@@ -13,7 +13,8 @@ async function create(req, res) {
     const game = await Game.findById(req.params.id).populate('boxScore');;
     const team = await Team.findOne({ 'games': game }).populate('players');
     const player = await Player.findById(req.body.playerId).populate('stats').sort('name');
-    
+    const stats = await Stat.find({ 'game': game }).populate('player');
+
     // New below
     const newStat = {
         player: req.body.playerId,
@@ -30,14 +31,14 @@ async function create(req, res) {
     await game.save()
 
     // New above
-    res.render('stats/show', { title: 'Game Stats', game, team, player }); 
+    res.redirect(`/stats/${game._id}`); 
 }
 
 async function show(req, res) {
     const game = await Game.findById(req.params.id)
     const team = await Team.findOne({ 'games': game }).populate('players');
-    const stat = await Stat.findOne({ 'game': game }).populate('player');
+    const stats = await Stat.find({ 'game': game }).populate('player');
     //console.log(stat.player.name);
     const players = await Player.find({ _id: { $nin: team.players } }).populate('stats').sort('name');
-    res.render('stats/show', { title: 'Game Stats', game, team, stat, players });
+    res.render('stats/show', { title: 'Game Stats', game, team, stats, players });
 }
