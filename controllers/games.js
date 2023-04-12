@@ -39,10 +39,6 @@ async function deleteGame(req, res) {
     res.redirect(`/games`);
 }
 
-// Controller Delete by ID around form 
-// <% if (user?._id.equals(g.user)) { %>
-// <% } %>
-
 async function create(req, res) {
   req.body.born += 'T00:00';
   try {

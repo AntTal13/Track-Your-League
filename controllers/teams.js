@@ -32,8 +32,9 @@ function newTeam(req, res) {
   
 async function create(req, res) {
     try {
-      const team = await Team.create(req.body);
-      res.redirect(`/teams/${team._id}`);
+    req.body.user = req.user._id;
+    const team = await Team.create(req.body);
+    res.redirect(`/teams/${team._id}`);
     } catch (err) {
       console.log(err);
       res.render('teams/new', { errorMsg: err.message });

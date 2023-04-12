@@ -21,9 +21,19 @@
             <th></th>
         </tr>
         </thead>
+    <% if (players.length > 0) { %>
+        <% player.stats.forEach(function(s) { %>   
+    <tbody>
+        <td></td>
+        <td>s.points</td>
+        <td>s.assists</td>
+        <td>s.rebounds</td>
     </tbody>
         <td colspan="4"></td>
-    </section>
+    </table>
+        <% }) %>
+    <% } %>
+    <table>
     <form id="add-stats-to-player" action="/stats/<%= game._id %>" method="POST">
         <label>Player:</label>
         <select name="playerId">
@@ -41,6 +51,7 @@
         <button type="submit">Add to Box Score</button>
         <br>
         </form>
+    </table>
 <% } %>
 
 <%- include('../partials/footer') %>

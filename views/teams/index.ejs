@@ -1,19 +1,21 @@
 <%- include('../partials/header') %>
 
 <% if (teams.length) { %>
-<table id="list">
-  <thead>
-    <tr>
-      <th>Team Name</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% teams.forEach(function(t) { %>
-      <tr>
+    <table id="list">
+        <thead>
+            <tr>
+                <th>Team Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% teams.forEach(function(t) { %>
+                <% if (user?._id.equals(t.user)) { %>
+                <tr>
         <td><%= t.name %></td>
         <td><a href="/teams/<%= t._id %>">Details</a></td>
       </tr>
+      <% } %>
       <% }); %>
     </tbody>
   </table>
@@ -24,6 +26,6 @@
 <% if (user) { %>
     <button onclick="window.location.href = '/teams/new';">Add Team</button>
 <% } %>
-
+  
 
 <%- include('../partials/footer') %>

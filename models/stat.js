@@ -2,14 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const statSchema = new Schema({
-    player: [{
+    player: {
         type: Schema.Types.ObjectId,
         ref: 'Player'
-     }],
-    game: [{
+     },
+    game: {
         type: Schema.Types.ObjectId,
         ref: 'Game'
-     }],
+     },
      points: Number,
      assists: Number,
      rebounds: Number,
