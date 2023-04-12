@@ -2,19 +2,21 @@
 
 <table>
     <thead>
-    <tr>
+      <tr>
         <th>Team Name</th>
         <th>Wins</th>
         <th>Losses</th>
-    </tr>
+      </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>Team</td>
-        <td>Win Total</td>
-        <td>Loss Total</td>
-    </tr>
+      <% teams.forEach(function(team) { %>
+        <tr>
+          <td><%= team.name %></td>
+          <td><%= team.tally.Win || 0 %></td>
+          <td><%= team.tally.Loss || 0 %></td>
+        </tr>
+      <% }); %>
     </tbody>
-</table>
+  </table>
 
 <%- include('../partials/footer') %>

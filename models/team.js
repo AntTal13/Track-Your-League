@@ -15,6 +15,10 @@ const teamSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
+    tally: {
+        type: Schema.Types.Mixed,
+        default: {}
+    },
 }, {
     timestamps: true
 });
