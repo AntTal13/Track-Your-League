@@ -3,10 +3,6 @@ const Schema = mongoose.Schema;
 
 const teamSchema = new Schema({
     name: String,
-    winLoss: [{
-      type: String,
-    }],
-    opponent: String,
     players: [{
         type: Schema.Types.ObjectId,
         ref: 'Player'
