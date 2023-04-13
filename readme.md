@@ -49,8 +49,8 @@ At this time, no. You may only interact with the website if you have an account 
 
   <img src="https://i.imgur.com/W4b7mj1.jpeg" width="800" height="700">
     <img src="https://i.imgur.com/cGQsUAW.jpeg" width="800" height="700">
-      <img src="https://i.imgur.com/9CYn7Re.jpeg" width="800" height="700">
-        <img src="https://i.imgur.com/mqSYLOF.jpeg" width="800" height="700">
+      <img src="https://i.imgur.com/X7EqsfA.jpeg" width="800" height="700">
+        <img src="https://i.imgur.com/O11j5hd.jpeg" width="800" height="700">
 
 </div>  
 
