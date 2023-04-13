@@ -13,6 +13,8 @@
   ##### Created By: Anthony Talarico
 
   [![LinkedIn Badge](https://img.shields.io/badge/-@anthonytalarico-blue?style=flat&logo=Linkedin&logoColor=black)](https://www.linkedin.com/in/anthony-talarico/)
+  
+  #### [Link To Trello Board](https://trello.com/b/PO2tMO7Q/project-2-track-your-league)
 
 </div>
 
