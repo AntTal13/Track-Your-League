@@ -8,7 +8,7 @@
 
   # Track Your League
 
-  ### [CLICK TO LAUNCH]()
+  ### [CLICK TO LAUNCH](https://track-your-league-3623.herokuapp.com/)
 
   ##### Created By: Anthony Talarico
 
