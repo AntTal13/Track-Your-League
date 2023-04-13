@@ -13,7 +13,7 @@
 <% if (team) { %>
     <section id="stats-table">
     <table>
-        <thead>
+        <thead id="stats-header">
         <tr>
             <th>Player</th>
             <th>Points</th>
@@ -22,13 +22,13 @@
         </tr>
         </thead>
     <% if (game.boxScore.length > 0) { %>
-        <tbody>
+        <tbody id="stats-body">
             <% stats.forEach(function(s) { %>   
         <tr>
-            <td><%= s.player.name %></td>
-            <td><%= s.points %></td>
-            <td><%= s.assists %></td>
-            <td><%= s.rebounds %></td>
+            <td id="test"><%= s.player.name %></td>
+            <td id="test"><%= s.points %></td>
+            <td id="test"><%= s.assists %></td>
+            <td id="test"><%= s.rebounds %></td>
         </tr>
         <% }) %>
     <% } %>

@@ -140,3 +140,19 @@ button:hover {
 #delete-button, #add-button {
   font-size: 20px;
 }
+
+#stats-table {
+  background-image: linear-gradient(beige, darkorange);
+  width: 45%;
+  text-align: center;
+  border: solid black 1px;
+}
+
+#stats-body {
+  font-size: 20px;
+}
+
+#stats-header {
+  font-size: 23px;
+  color: black;
+}
