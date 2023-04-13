@@ -8,7 +8,7 @@
 
 <% if (user?._id.equals(team.user)) { %>
 <form action="/teams/<%= team._id %>?_method=DELETE" method="POST">
-    <button type="submit">Delete Team</button>
+    <button id="delete-button" type="submit">Delete Team</button>
   </form>
 <% } %>
 
@@ -39,7 +39,7 @@
         ).join('') %>
         </select>
         <br>
-        <button type="submit">Add to Roster</button>
+        <button id="add-button" type="submit">Add to Roster</button>
         <br>
         </form>
 <% } %>

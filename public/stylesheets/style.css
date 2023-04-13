@@ -136,3 +136,7 @@ button:hover {
   background-color: bisque;
   border: solid black 1px;
 }
+
+#delete-button, #add-button {
+  font-size: 20px;
+}
