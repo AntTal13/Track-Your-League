@@ -102,10 +102,15 @@ button:hover {
   justify-items: center;
 }
 
+#list {
+  background-image: linear-gradient(beige, darkorange);
+  width: 30%;
+  text-align: center;
+  border: solid black 1px;
+}
+
 #team-name {
-  display: flex;
   font-size: 23px;
-  margin-bottom: 10px;
 }
 
 #team-body {
@@ -137,8 +142,13 @@ button:hover {
   border: solid black 1px;
 }
 
-#delete-button, #add-button {
+#delete-button {
   font-size: 20px;
+} 
+
+#add-button {
+  font-size: 20px;
+  margin-left: 10px;
 }
 
 #stats-table {
@@ -155,4 +165,50 @@ button:hover {
 #stats-header {
   font-size: 23px;
   color: black;
+}
+
+#testing {
+  background-color: bisque;
+  padding: 0px 25px 0px 0px;
+} 
+
+#player-table {
+  background-image: linear-gradient(beige, darkorange);
+  width: 30%;
+  text-align: center;
+  border: solid black 1px;
+}
+
+#player-header {
+  font-size: 23px;
+  color: black;
+}
+
+#player-body {
+  font-size: 17px;
+}
+
+#add-player-to-roster {
+  display: flex;
+}
+
+#all-games {
+  background-image: linear-gradient(darkorange, black);
+  width: 55%;
+  text-align: center;
+  border: solid black 1px;
+}
+
+#games-header {
+  font-size: 23px;
+  color: bisque;
+}
+
+#games-body {
+  font-size: 20px;
+}
+
+#remove-game {
+  background-image: linear-gradient(darkorange, black);
+  border: solid black 1px;
 }

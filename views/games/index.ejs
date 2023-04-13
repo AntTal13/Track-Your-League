@@ -31,8 +31,8 @@
 
 <br><br>
 <% if (games.length) { %>
-  <table>
-    <thead>
+  <table id="all-games">
+    <thead id="games-header">
       <tr>
         <th>Game</th>
         <th>Win/Loss</th>
@@ -40,13 +40,13 @@
         <th></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="games-body">
       <% games.forEach(function(g) { %>
         <tr>
-          <td><%= g.name %></td>
-          <td><%= g.winLoss %></td>
-            <td><a href="/stats/<%= g._id %>">Stats</a></td>
-          <td>
+          <td id="test"><%= g.name %></td>
+          <td id="test"><%= g.winLoss %></td>
+            <td id="test"><a href="/stats/<%= g._id %>">Stats</a></td>
+          <td id="remove-game">
               <form action="/games/<%= g._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
               </form>

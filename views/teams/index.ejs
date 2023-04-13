@@ -1,5 +1,7 @@
 <%- include('../partials/header') %>
 
+<br>
+
 <% if (teams.length) { %>
     <table id="list">
         <thead id="team-name">
@@ -12,8 +14,8 @@
             <% teams.forEach(function(t) { %>
                 <% if (user?._id.equals(t.user)) { %>
                 <tr>
-        <td><%= t.name %></td>
-        <td><a href="/teams/<%= t._id %>">Details</a></td>
+        <td id="test"><%= t.name %></td>
+        <td id="test"><a href="/teams/<%= t._id %>">Details</a></td>
       </tr>
       <% } %>
       <% }); %>
@@ -22,7 +24,7 @@
 <% } else { %>
     <h5>No Teams Yet</h5>
 <% } %>
-<br>
+<br><br>
 <% if (user) { %>
     <button onclick="window.location.href = '/teams/new';">Add Team</button>
 <% } %>

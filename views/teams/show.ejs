@@ -3,45 +3,47 @@
 <h2>
 <section id="show-page">
     <div><%= team.name %></div>
+  </h2>
+  
+  <% if (user?._id.equals(team.user)) { %>
+    <form action="/teams/<%= team._id %>?_method=DELETE" method="POST">
+      <button id="delete-button" type="submit">Delete Team</button>
+    </form>
+    <% } %>
 </section>
-</h2>
+    
+<br><br>
 
-<% if (user?._id.equals(team.user)) { %>
-<form action="/teams/<%= team._id %>?_method=DELETE" method="POST">
-    <button id="delete-button" type="submit">Delete Team</button>
-  </form>
-<% } %>
-
-<br>
-<h2>Players</h2>
 <% if (team) { %>
-    <table>
-      <thead>
+    <table id="player-table">
+      <thead id="player-header">
         <tr>
-          <th>Player</th>
+          <th>Current Roster</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="player-body">
         <tr>
-            <td>
+            <td id="testing">
             <%- team.players.map(p => 
                 `<ul><li>${p.name}</li></ul>`
                 ).join('') %>
             </td>
         </tr>
       </tbody>
-      <td colspan="4"></td>
-    </section>
-        <form id="add-player-to-roster" action="/teams/<%= team._id %>/players" method="POST">
+    </table>
+
+    <br><br>
+
+    <h2>Add A Player</h3>
+      <form id="add-player-to-roster" action="/teams/<%= team._id %>/players" method="POST">
         <select name="playerId">
         <%- players.map(p => 
         `<option value="${p._id}">${p.name}</option>`
         ).join('') %>
         </select>
-        <br>
+        <br><br>
         <button id="add-button" type="submit">Add to Roster</button>
-        <br>
-        </form>
+      </form>
 <% } %>
 
 
