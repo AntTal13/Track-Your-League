@@ -1,19 +1,19 @@
 <%- include('../partials/header') %>
 
-<table>
-    <thead>
+<table id="standings-table">
+    <thead id="standings-header">
       <tr>
         <th>Team Name</th>
         <th>Wins</th>
         <th>Losses</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="standings-body">
       <% teams.forEach(function(team) { %>
         <tr>
-          <td><%= team.name %></td>
-          <td><%= team.tally.Win || 0 %></td>
-          <td><%= team.tally.Loss || 0 %></td>
+          <td id="test"><%= team.name %></td>
+          <td id="test"><%= team.tally.Win || 0 %></td>
+          <td id="test"><%= team.tally.Loss || 0 %></td>
         </tr>
       <% }); %>
     </tbody>

@@ -2,13 +2,13 @@
 
 <% if (teams.length) { %>
     <table id="list">
-        <thead>
+        <thead id="team-name">
             <tr>
                 <th>Team Name</th>
                 <th></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="team-body">
             <% teams.forEach(function(t) { %>
                 <% if (user?._id.equals(t.user)) { %>
                 <tr>
